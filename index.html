@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,25 +49,71 @@
          * - Show a satellite map of the weather in Brentwood.
          * - Request a user's phone number and send them an SMS with the weather.
          */
+
+        // Setting the default coordianates to FreightWise in Brentwood
+        let lat = 36.028880;
+        let long = -86.787250;
+        let searchURL;
+
         class Test {
             constructor() {
-                this.testResults = document.getElementsByClassName('test-results');
+                this.testResults = document.getElementsByClassName('test-results')[0];
+                this.location = this.getLocation()
             }
 
             async run() {
                 console.log(new Date().toISOString(), '[Test]', 'Running the test');
+                // // TODO: Make the API call and handle the results
 
-                // TODO: Make the API call and handle the results
+                // Clear the div with the "test-results" class on the page
+                this.testResults.innerHTML = ('').toString();
+                
+                try {
+                    // fetch data from the API
+                    const data = await axios.get(searchURL);
+                    this.setResults(data)
+                } catch (error) {
+                    // appropriately handle the error
+                    this.setError(error);
+                }
+
             }
+
+            // Using the HTML geolocation API to get the users location
+            getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(this.setCoords);
+                } else {
+                    console.error(error);
+                    searchURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
+                        "&APPID=25e989bd41e3e24ce13173d8126e0fd6";
+                }
+            };
+
+            // Setting the users coordinates
+            setCoords(position) {
+                lat = position.coords.latitude;
+                long = position.coords.longitude;
+                console.log("Lat: " + lat + " Long: " + long)
+                searchURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long +
+                    "&APPID=25e989bd41e3e24ce13173d8126e0fd" +
+                    "6";
+            };
 
             setError(message) {
                 // TODO: Format the error
+                console.log(message)
                 this.testResults.innerHTML = (message || '').toString();
             }
 
             setResults(results) {
                 // TODO: Format the results
-                this.testResults.innerHTML = (results || '').toString();
+                const city = document.createElement('h1');
+                city.innerText = results.data.city.name;
+                city.className = 'city';
+
+                this.testResults.appendChild(city);
+                console.log(results)
             }
         }
     </script>
@@ -76,7 +123,7 @@
             text-align: center;
         }
 
-        .button-container > button {
+        .button-container>button {
             margin: 0;
             padding: 10px 18px;
             color: white;
@@ -87,17 +134,18 @@
             font-size: 14px;
         }
 
-        .button-container > button:hover {
+        .button-container>button:hover {
             background-color: #00A000;
         }
 
-        .button-container > button:active {
+        .button-container>button:active {
             background-color: #006000;
         }
     </style>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <div class="test-results"></div>
 
@@ -132,4 +180,5 @@
         addButtonForTest(buttonContainer, test);
     </script>
 </body>
+
 </html>
