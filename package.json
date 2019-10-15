@@ -1,0 +1,25 @@
+{
+  "name": "testresults",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KelseyGibbs/TestResults.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KelseyGibbs/TestResults/issues"
+  },
+  "homepage": "https://github.com/KelseyGibbs/TestResults#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "twilio": "^3.35.1"
+  }
+}

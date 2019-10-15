@@ -1,0 +1,185 @@
+
+.test-results {
+    text-align: center;
+}
+
+.weatherContainer {
+    border: 6px solid;
+    border-color: #008000;
+    border-radius: 40px;
+    margin: 10%;
+    background-color: #008000;
+    color: white;
+}
+
+.test-results>.weatherContainer:hover {
+    background-color: #00A000;
+}
+
+.button-container {
+    text-align: center;
+    padding: 15%;
+    
+}
+
+.button-container>button {
+    margin: 0;
+    padding: 10px 18px;
+    color: white;
+    background-color: #008000;
+    border: none;
+    border-radius: 3px;
+    transition: all 200ms ease-in-out;
+    font-size: 14px;
+}
+
+.button-container>button:hover {
+    background-color: #00A000;
+}
+
+.button-container>button:active {
+    background-color: #006000;
+}
+
+.thunderstorm {
+    background-image: url("../images/thunderstorm.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.thunderstorm .weatherContainer {
+    border-color: black;
+    background-color: black;
+}
+
+.thunderstorm .test-results>.weatherContainer:hover {
+    background-color: black;
+}
+
+.thunderstorm .button-container>button {
+    background-color: black;
+}
+
+.thunderstorm .button-container>button:hover {
+    background-color: black;
+}
+
+.thunderstorm .button-container>button:active {
+    background-color: black;
+}
+
+.drizzle {
+    background-image: url("../images/drizzle.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.drizzle .weatherContainer, .rain .weatherContainer {
+    border-color: #659EC7;
+    background-color: #659EC7;
+}
+
+.drizzle .test-results>.weatherContainer:hover, .rain .test-results>.weatherContainer:hover  {
+    background-color: #659EC7;
+}
+
+.drizzle .button-container>button, .rain .button-container>button {
+    background-color: #659EC7;
+}
+
+.drizzle .button-container>button:hover, .rain .button-container>button:hover {
+    background-color: #659EC7;
+}
+
+.drizzle .button-container>button:active, .rain .button-container>button:active {
+    background-color: #659EC7;
+}
+
+.rain {
+    background-image: url("../images/rain.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.snow {
+    background-image: url("../images/snow.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.snow .weatherContainer, .clouds .weatherContainer {
+    border-color: white;
+    background-color: white;
+    color: black;
+}
+
+.snow .test-results>.weatherContainer:hover, .clouds .test-results>.weatherContainer:hover  {
+    background-color: white;
+}
+
+.snow .button-container>button, .clouds .button-container>button {
+    background-color: white;
+    color: black;
+}
+
+.snow .button-container>button:hover, .clouds .button-container>button:hover {
+    background-color: white;
+}
+
+.snow .button-container>button:active, .clouds .button-container>button:active {
+    background-color: white;
+}
+
+.atmosphere {
+    background-image: url("../images/tornado.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.clear {
+    background-image: url("../images/clear.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.clouds {
+    background-image: url("../images/clouds.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.error {
+    background-image: url("../images/error.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
